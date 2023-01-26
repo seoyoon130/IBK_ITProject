@@ -1,0 +1,161 @@
+.App {
+  text-align: center;
+}
+
+.header {
+  position: absolute;
+  background-color: white;
+  height: 10px;
+  font-size: 10px;
+  right:10px;
+  top:10px;
+}
+
+.nav{
+  background: white;
+  width : 100%;
+  padding : 100px;
+  border-bottom: 1px solid black;
+}
+
+.logo {
+  position: absolute;
+  width: 118px;
+  height: 87px;
+  left: 50px;
+  top: 44px;
+}
+
+.logo-name {
+  position: absolute;
+  width: 186px;
+  height: 32px;
+  left: 120px;
+  top: 87px;
+
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 31px;
+  /* identical to box height */
+
+  text-align: center;
+  color: #5463D1;
+}
+
+.dropbox {
+  position: absolute;
+  width: 90px;
+  height: 70px;
+  left: 150px;
+  top: 30px;
+}
+
+.start {
+  position: absolute;
+  width: 186px;
+  height: 32px;
+  left: 104px;
+  top: 100px;
+  
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 31px;
+  
+  text-align: center;  
+  color: black;
+}
+
+.introduce {
+/* 서비스 소개 */
+position: absolute;
+width: 152px;
+height: 31px;
+left: 950px;
+top: 87px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 700;
+font-size: 26px;
+line-height: 31px;
+text-align: center;
+
+color: black;
+}
+
+
+.tutorial {
+/* 튜토리얼 */
+position: absolute;
+width: 152px;
+height: 31px;
+left: 1150px;
+top: 87px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 700;
+font-size: 26px;
+line-height: 31px;
+text-align: center;
+
+color: black;
+}
+
+.analysis {
+  /* 분석 방법 */
+position: absolute;
+width: 152px;
+height: 31px;
+left: 1350px;
+top: 87px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 700;
+font-size: 26px;
+line-height: 31px;
+text-align: center;
+
+color: black;
+
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
