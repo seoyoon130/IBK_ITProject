@@ -1,39 +1,64 @@
-/* eslint-disable */
-import logo from './logo.svg';
+/* eslint-disable-next-line */
 import './App.css';
 
 function App() {
   return (
     <div className="App">
       {/* header */}
-      <a className="header" href="https://www.ibk.co.kr/">[기업은행 바로가기]</a>
-
-      {/* navigation bar */}
-      <div className="nav">
-        <img className="logo" src="img/logo.png"></img>
-        {/*<img className="dropbox" src="img/dropbox-black.png"></img>*/}
-        {/*<span className="start">IBK BOX START</span>*/}
-        <span className="logo-name">START</span>
-        <span class="introduce">서비스 소개</span>
-        <span class="tutorial">튜토리얼</span>
-        <span class="analysis">분석 방법</span>  
+      <header class="header">
+        <a href='https://www.ibk.co.kr/' class="link">|기업은행 바로가기|</a>
+      </header>
+      {/* nav */}
+      <div class="tablist">
+        <div class="logo">
+            <img class="box" src="/img/box.png" alt="box"></img>
+            <ul class="list">
+	            <li><a href="#" class="tab">서비스 소개</a></li>
+	            <li><a href="#" class="tab">튜토리얼</a></li>
+	            <li><a href="#" class="tab">분석 방법</a></li>
+            </ul>
+        </div>
       </div>
-
-      {/* 사이드바 left */}
-      <div className="aside-left">
+      {/* content */}
+      <div class="content">
+        {/* aside */}
+        <div class="aside">
+          <div class="boxstartImg">
+            <img class="boxstart" src="/img/boxstart.png" alt="boxstart"></img>
+          </div>
+          <div class="choicebar">
+            <button class="pbtn">점포위치</button>
+            <button class="cbtn">업종선택</button>
+          </div>
+          <div class="searchtxt">검색하거나 지도에서 위치를 선택하세요</div>
+          <div class="search">
+		        <input type="text" title="검색" class="search_input"></input>
+		        <button type="button" class="search_button">검색</button>
+	        </div>
+          <div class="checkmap">
+          <input type='checkbox' name='map' value='mapval' />지도에 직접 위치 선택하기
+          </div>
+          <div class="submit">
+            <button class="submitbtn">적용</button>
+          </div>
+        </div>
+        {/* main */}
+        <div class="main">
+        </div>
+        {/* raside */}
+        <div class="raside">
+            <button class="people">유동인구</button>
+            <button class="dashboard">대시보드</button>
+        </div>
       </div>
-
-      {/* center 화면 */}
-      <div className="center">
-      </div>
-
-      { /* 사이드바 right */}
-      <div className="aside-right">
-      </div>
-
       {/* footer */}
-      <div className="footer">
-      </div>
+      <footer class="footer">
+        <div class="banner">
+          <div>
+            <img class="boxpos" src="/img/footImg.png" alt="boxpos"></img>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }
