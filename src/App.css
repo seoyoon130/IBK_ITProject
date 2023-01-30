@@ -1,7 +1,7 @@
 .App {
-  display: flex; /* flex box 활용 */
+  display: flex; /* flex box */
   flex-direction: column;
-  height: 100vh; /* vh : 브라우저 창 내의 상대적인 길이 */
+  height: 100vh; /* vh : 브라우저 화면 기준 상대적인 높이 설정 */
   background-color: white;
   font-family: "Malgun Gothic";
 /**min-height: 100vh;*/ 
@@ -18,7 +18,7 @@ color: inherit;
 }
 
 .header {
-height: 5%;
+height: 2%;
 background-color: white;
 font-size: 5px;
 }
@@ -28,12 +28,13 @@ float: right;
 }
 
 .tablist {
-height: 20%;
+height: 18%;
 /*box-shadow: 0 2px 2px 0 rgba(0,0,0,0.1);*/
 background-color: white;
 border-bottom-style: solid;
-border-color: black;
+border-color: lightgray;
 border-width: 1px;
+text-align: center;
 }
 
 .list{
@@ -72,15 +73,19 @@ font-size: 24px;
 .box {
 width : 180px;
 height: 160px;
-float: left;
+float: center;
 margin-left: 100px;
+}
+
+.logo {
+text-align: center;
 }
 
 .content {
 display: flex;
 flex: 1;
-height : 60%;
-margin-top: 10px;
+height : 62%;
+margin-top: 0px;
 background-color: white;
 }
 
@@ -94,7 +99,7 @@ background-color: white;
 margin: 20px;
 border-radius: 20px;
 border-style: solid;
-border-color: black;
+border-color: lightgray;
 border-width: 1px;
 }
 
@@ -112,11 +117,12 @@ text-align: center;
 
 .pbtn, .cbtn {
 margin: 10px;
-width: 80px;
+width: 100px;
 height: 50px;
 border-width: 1px;
 border-style: solid;
-background-color: #ffffff
+background-color: #ffffff;
+border-radius: 10px;
 }
 
 .searchtxt {
@@ -150,18 +156,58 @@ font-size: 10px;
 text-align: right;
 }
 
+.businessbar {
+background-color: white;
+margin-top:20px;
+margin-bottom: 10px;
+margin-left: 10px;
+margin-right: 10px;
+text-align: center;
+}
+
+.btn {
+margin: 2px;
+width: 60px;
+height: 70px;
+border-width: 1px;
+border-style: solid;
+background-color: #ffffff;
+display : inline-block;
+font-size: 11px;
+}
+
+.btnActive {
+  margin: 2px;
+  width: 60px;
+  height: 70px;
+  border-width: 1px;
+  border-style: solid;
+  background-color: #ffffff;
+  display : inline-block;
+  font-size: 11px;
+  color:#ffffff;
+  background-color: #4251C7;
+}
+
 .submit {
 text-align: center;
 margin-top: 30px;
 }
 
 .submitbtn {
-width: 80px;
+width: 150px;
 height: 50px;
 color: #fff;
 border-width: 1px;
 border-style: solid;
 background-color: #4251C7;
+border-color: #4251C7;
+border-radius: 20px;
+}
+
+.submitbtn:active {
+background-color:#ffffff;
+color: #4251C7;
 }
 
 .boxstart {
@@ -182,8 +228,14 @@ margin-bottom: 20px;
 margin-left: 10px;
 margin-right: 0px;
 border-style: solid;
-border-color: black;
+border-color: lightgray;
 border-width: 1px;
+}
+
+.mapdisplay {
+height : auto;
+width: 1240px;
+background-color: #4251C7;
 }
 
 .raside {
@@ -195,16 +247,27 @@ margin-right: 5px;
 background-color: white;
 }
 
-.people, .dashboard {
+.people, .dashboard, .mapbtn, .findproperty {
 width: 50px;
 height: 50px;
 border-width: 1px;
 border-style: solid;
-background-color: #fff;
+background-color:#4251C7;
+border-color: #4251C7;
+color: #fff;
+}
+
+.people:active, .dashboard:active, .mapbtn:active, .findproperty:active {
+background-color:#ffffff;
+color: #4251C7;
+}
+
+.people, .dashboard, .findproperty {
+margin-top: 5px;
 }
 
 .footer {
-height: 15%;
+height: 18%;
 margin-top: 0px;
 background-color: white;
 }
