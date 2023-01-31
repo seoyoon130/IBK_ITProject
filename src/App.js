@@ -1,9 +1,10 @@
 /* eslint-disable-next-line */
 import './App.css';
-import React, { useEffect, useState, component } from 'react';
+import React, { useState, component } from 'react';
 import Map from './component/Map';
 import Dashboard from './component/Dashboard';
 import People from './component/People';
+import Building from './component/Building';
 
 function App() {
   //버튼 색 변경 Event 코드
@@ -17,7 +18,30 @@ function App() {
     });
   };
 
-  //반환된 html 코드
+  //태그 클릭 시 Content 변경 코드
+  const tag = [[ 'map', '위치탐색'],
+               [ 'people', '유동인구'],
+               [ 'dashboard', '대시보드'],
+               [ 'building', '공시지가']];
+
+  //지도 화면 기본값 설정
+  const [content, setContent] = useState('map');
+
+  //버튼 클릭 시, 해당 버튼의 value 반환
+  const handleClickButton = e => {
+    const name = e.target.value;
+    setContent(name);
+  };
+
+  //key-component 연결
+  const selectComponent = {
+    'map' : <Map />,
+    'people' : <People />,
+    'dashboard' : <Dashboard />,
+    'building' : <Building />
+  };
+
+  //html 코드
   return (
     <div className="App">
       {/* header */}
@@ -51,10 +75,6 @@ function App() {
           <input type='checkbox' name='map' value='mapval' />지도에 직접 위치 선택하기
           </div>
           <div class="businessbar">
-            {/*<button value="0" class="btn">전체</button>
-            <button value="1"class="btn">외식업</button>
-            <button value="2" class="btn">서비스업</button>
-            <button value="3" class="btn">소매업</button>*/}
             { data.map((item, idx) => {
                 return (
                   <>
@@ -71,15 +91,19 @@ function App() {
         </div>
 
         {/* main */}
-        <div class="main">
-          <Map></Map>
-        </div>
+        <div class="main">{selectComponent[content]}</div>
 
         {/* raside */}
         <div class="raside">
-            <button class="tag">위치탐색</button>
-            <button class="tag">유동인구</button>
-            <button class="tag">대시보드</button>
+            { tag.map((item) => {
+                return (
+                  <>
+                  <button
+                    className="tag"
+                    value={item[0]}
+                    onClick={handleClickButton}>{item[1]}</button></>
+                );
+              })}
             <button class="tag" onClick={() => window.open('https://new.land.naver.com/complexes?ms=37.5663278,126.98847759884775,18&a=APT:ABYG:JGC&e=RETAIL/', '_blank')}>매물 찾기</button>
         </div>
       </div>

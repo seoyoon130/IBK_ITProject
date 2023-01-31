@@ -1,6 +1,7 @@
 import React from 'react';
 
-function People(props) {
+function Building(props) {
+
     return (
         <div>
             <img src="/img/people.png" alt="people" style={{ width : "1240px", height : "auto"}}></img>
@@ -8,4 +9,4 @@ function People(props) {
     );
 }
 
-export default People; //내보내기
+export default Building; //내보내기
