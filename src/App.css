@@ -247,7 +247,7 @@ margin-right: 5px;
 background-color: white;
 }
 
-.people, .dashboard, .mapbtn, .findproperty {
+.tag {
 width: 50px;
 height: 50px;
 border-width: 1px;
@@ -255,16 +255,18 @@ border-style: solid;
 background-color:#4251C7;
 border-color: #4251C7;
 color: #fff;
+margin-bottom: 5px;
 }
 
-.people:active, .dashboard:active, .mapbtn:active, .findproperty:active {
+.tag:active {
 background-color:#ffffff;
 color: #4251C7;
+margin-bottom: 5px;
 }
 
-.people, .dashboard, .findproperty {
+/*.people, .dashboard, .findproperty {
 margin-top: 5px;
-}
+}*/
 
 .footer {
 height: 18%;

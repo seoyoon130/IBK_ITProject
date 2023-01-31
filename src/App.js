@@ -1,57 +1,11 @@
 /* eslint-disable-next-line */
 import './App.css';
-import React, { useEffect, useState } from 'react';
-
-
-const { kakao } = window; //kakao is not defined 오류 해결
+import React, { useEffect, useState, component } from 'react';
+import Map from './component/Map';
+import Dashboard from './component/Dashboard';
+import People from './component/People';
 
 function App() {
-  //Kakao Map 코드
-  useEffect(() => {
-    const container = document.getElementById('map'); //지도를 담을 영역의 DOM 레퍼런스
-    const options = { //지도를 생성할 때 필요한 기본 옵션
-	    center: new kakao.maps.LatLng(37.566526, 126.987338), //지도의 중심 좌표, 현재 서울 중구 을지로 IBK 파이낸스 타워
-	    level: 3 //지도의 레벨(확대, 축소 정도)
-    };
-    //지도 생성 및 객체 반환
-    const map = new kakao.maps.Map(container, options);
-
-    //marker 객체 생성
-    let marker = new kakao.maps.Marker({
-      position: map.getCenter(),
-    });
-
-    //지도 내 클릭 시 marker 생성, click event 구성
-    kakao.maps.event.addListener(map, 'click', function(mouseEvent) {        
-    
-      //클릭한 위도, 경도 정보 획득
-      var latlng = mouseEvent.latLng;
-
-      //marker 위치를 클릭한 곳으로 이동
-      marker.setPosition(latlng);
-
-      //marker 지도 위에 표시
-      marker.setMap(map);
-    });
-
-    //infoWindow 내용 설정
-    var iwContent = '<div style="padding:10px;">서울 중구 을지로 82</div>',
-      iwRemoveable = true; //infoWindow를 닫는 버튼 생성
-
-    //infoWindow 생성
-    var infowindow = new kakao.maps.InfoWindow({
-        content : iwContent,
-        removable : iwRemoveable
-    });
-
-    //marker에 click event 등록
-    kakao.maps.event.addListener(marker, 'click', function() {
-    //marker 위에 infoWindow 표시
-    infowindow.open(map, marker);  
-    });
-
-  }, [])
-
   //버튼 색 변경 Event 코드
   let data = ["전체", "외식업", "서비스업", "소매업"];
 
@@ -63,6 +17,7 @@ function App() {
     });
   };
 
+  //반환된 html 코드
   return (
     <div className="App">
       {/* header */}
@@ -117,15 +72,15 @@ function App() {
 
         {/* main */}
         <div class="main">
-          <div id="map" style={{ width : "1240px", height : "auto"}}></div>
+          <Map></Map>
         </div>
 
         {/* raside */}
         <div class="raside">
-            <button class="mapbtn">위치탐색</button>
-            <button class="people">유동인구</button>
-            <button class="dashboard">대시보드</button>
-            <button class="findproperty" onClick={() => window.open('https://new.land.naver.com/complexes?ms=37.5663278,126.98847759884775,18&a=APT:ABYG:JGC&e=RETAIL/', '_blank')}>매물 찾기</button>
+            <button class="tag">위치탐색</button>
+            <button class="tag">유동인구</button>
+            <button class="tag">대시보드</button>
+            <button class="tag" onClick={() => window.open('https://new.land.naver.com/complexes?ms=37.5663278,126.98847759884775,18&a=APT:ABYG:JGC&e=RETAIL/', '_blank')}>매물 찾기</button>
         </div>
       </div>
 
