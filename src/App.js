@@ -13,7 +13,43 @@ function App() {
 	    center: new kakao.maps.LatLng(37.566526, 126.987338), //지도의 중심 좌표, 현재 서울 중구 을지로 IBK 파이낸스 타워
 	    level: 3 //지도의 레벨(확대, 축소 정도)
     };
-    const map = new kakao.maps.Map(container, options); //지도 생성 및 객체 리턴
+    //지도 생성 및 객체 반환
+    const map = new kakao.maps.Map(container, options);
+
+    //marker 객체 생성
+    let marker = new kakao.maps.Marker({
+      position: map.getCenter(),
+    });
+
+    //지도 내 클릭 시 marker 생성, click event 구성
+    kakao.maps.event.addListener(map, 'click', function(mouseEvent) {        
+    
+      //클릭한 위도, 경도 정보 획득
+      var latlng = mouseEvent.latLng;
+
+      //marker 위치를 클릭한 곳으로 이동
+      marker.setPosition(latlng);
+
+      //marker 지도 위에 표시
+      marker.setMap(map);
+    });
+
+    //infoWindow 내용 설정
+    var iwContent = '<div style="padding:10px;">서울 중구 을지로 82</div>',
+      iwRemoveable = true; //infoWindow를 닫는 버튼 생성
+
+    //infoWindow 생성
+    var infowindow = new kakao.maps.InfoWindow({
+        content : iwContent,
+        removable : iwRemoveable
+    });
+
+    //marker에 click event 등록
+    kakao.maps.event.addListener(marker, 'click', function() {
+    //marker 위에 infoWindow 표시
+    infowindow.open(map, marker);  
+    });
+
   }, [])
 
   //버튼 색 변경 Event 코드
